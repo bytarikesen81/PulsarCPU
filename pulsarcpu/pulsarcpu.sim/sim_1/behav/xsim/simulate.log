@@ -1,0 +1,13 @@
+Time resolution is 1 ps
+time:                    0 ,result =         0
+time:                40000 ,result =         3
+time:                48000 ,result =         5
+time:                56000 ,result =         1
+time:                64000 ,result =         2
+time:                72000 ,result =         4
+All instructions are Fetched
+$finish called at time : 674 ns : File "C:/Users/bytar/Desktop/ARA PROJE ORIG/Kod/RISC-V CPU/pulsarcpu/pulsarcpu.srcs/sources_1/testbench/testbench.v" Line 100
+Memory in use : 8828 KB (peak memory: 8828 KB)     CPU usage : 15 ms
+All instructions are Fetched
+$finish called at time : 678 ns : File "C:/Users/bytar/Desktop/ARA PROJE ORIG/Kod/RISC-V CPU/pulsarcpu/pulsarcpu.srcs/sources_1/testbench/testbench.v" Line 100
+Memory in use : 8828 KB (peak memory: 8828 KB)     CPU usage : 15 ms

@@ -1,0 +1,110 @@
+bubble:
+	#create stack
+	addi	x2,x2,-48
+	#save x8
+	sw	x8,44(x2)
+	#update x8
+	addi	x8,x2,48
+
+	#init arr[] to memory
+	li	x15,3
+	sw	x15,-48(x8)
+	li	x15,5
+	sw	x15,-44(x8)
+	li	x15,1
+	sw	x15,-40(x8)
+	li	x15,2
+	sw	x15,-36(x8)
+	li	x15,4
+	sw	x15,-32(x8)
+
+	#init i to memory
+	sw	x0,-20(x8)
+	j	.L2
+.L6:
+	#init j to memory
+	sw	x0,-24(x8)
+	j	.L3
+.L5:
+	#load arr[ j ] to x14
+	lw	x15,-24(x8)
+	slli	x15,x15,2
+	addi	x14,x8,-16
+	add	x15,x14,x15
+	lw	x14,-32(x15)
+
+	#load arr[j+1] x15
+	lw	x15,-24(x8)
+	addi	x15,x15,1
+	slli	x15,x15,2
+	addi	x13,x8,-16
+	add	x15,x13,x15
+	lw	x15,-32(x15)
+	
+	#if arr[j + 1] > arr[j] 
+	bge	x15,x14,.L4
+
+# arr[j+1] < arr[j]
+
+	#load arr[j] x15
+	lw	x15,-24(x8)
+	slli	x15,x15,2
+	addi	x14,x8,-16
+	add	x15,x14,x15
+	lw	x15,-32(x15)
+
+	#store arr[j] to tmp
+	sw	x15,-28(x8)
+
+	#load arr[j+1] to x14
+	lw	x15,-24(x8)
+	addi	x15,x15,1
+	slli	x15,x15,2
+	addi	x14,x8,-16
+	add	x15,x14,x15
+	lw	x14,-32(x15)
+
+	#arr[j] = arr[j+1]
+	lw	x15,-24(x8)
+	slli	x15,x15,2
+	addi	x13,x8,-16
+	add	x15,x13,x15
+	sw	x14,-32(x15)
+
+	#store tmp to arr[j+1]
+	lw	x15,-24(x8)
+	addi	x15,x15,1
+	slli	x15,x15,2
+	addi	x14,x8,-16
+	add	x15,x14,x15
+	lw	x14,-28(x8)
+	sw	x14,-32(x15)
+.L4:
+	#j++
+	lw	x15,-24(x8)
+	addi	x15,x15,1
+	sw	x15,-24(x8)
+.L3:
+	#check (j - i) < 4
+	li	x14,4
+	lw	x15,-20(x8)
+	sub	x15,x14,x15
+	lw	x14,-24(x8)
+	blt	x14,x15,.L5
+
+	#i++
+	lw	x15,-20(x8)
+	addi	x15,x15,1
+	sw	x15,-20(x8)
+.L2:
+	#check i < 4
+	lw	x14,-20(x8)
+	li	x15,3
+	bge	x15,x14,.L6
+
+	#return
+	li	x15,0
+	mv	x10,x15
+	lw	x8,44(x2)
+	addi	x2,x2,48
+	jr	x1

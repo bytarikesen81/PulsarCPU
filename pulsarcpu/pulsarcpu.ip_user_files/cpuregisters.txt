@@ -1,0 +1,53 @@
+PIPE REGISTERS
+PIPE_IFDCR [31:0] :-
+[0] STALL 
+[1] ILLEGAL INSTRUCTION
+[2] ALU ENABLE
+[5:3] ALU OPERATION
+[6] ARITH. SUBTYPE
+[7] IMMEDIATE SEL.
+[8] LUI OP. FLAG
+[9] JMP OP. FLAG
+[10] JMPR OP. FLAG
+[11] BRANCH OP. FLAG
+[12] MEMORY WRITE
+[13] MEMORY TO REG FLAG.
+[18:14] SRC1_SELECT
+[23:19] SRC2_SELECT
+[28:24] DEST_SELECT 
+[31:29] RESERVED 
+
+PIPE_IMM [31:0]
+PIPE_INSTR [31:0]
+
+PIPE_PC [31:0]
+PIPE_IFPC [31:0]
+PIPE_FPC [31:0]
+
+X ->[0..31] GPRx [31:0]
+
+PIPE_WBCR[31:0] :-
+[0] Stall First Ins. Data
+[1] Stall Second Ins. Data
+[2] Writeback ALU Result to Reg 
+[5:3] Writeback ALU Operation   
+[6] Writeback Memory Write      
+[7] Writeback Memory to Reg.    
+[12:8] Writeback Dest Reg. Sel. 
+[13] Writeback Branch           
+[14] Writeback Branch Next      
+[25:15] RESERVED
+[27:26] Writeback Read Address   
+[31:28] Writeback Write Byte
+
+PIPE_WBRES [31:0]
+
+PIPE_WRADDR [31:0]
+PIPE_WRDATA [31:0]
+PIPE_RDDATA [31:0]
+
+WIRE IMEM_ADDR [31:0]
+
+PIPE_BRCR[1:0] :-
+[0] Branch Taken
+[1] Branch Stall

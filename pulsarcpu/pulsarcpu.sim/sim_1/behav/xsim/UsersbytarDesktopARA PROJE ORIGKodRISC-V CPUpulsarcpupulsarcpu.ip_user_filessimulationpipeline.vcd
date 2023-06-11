@@ -1,0 +1,172 @@
+$date
+   Sun Jun  4 03:33:14 2023
+$end
+$version
+  2022.2
+$end
+$timescale
+  1ps
+$end
+$scope module testbench $end
+$scope module pipe $end
+$var wire 1 ! CLK $end
+$var wire 1 " RESET $end
+$var wire 1 # STALL $end
+$var wire 1 $ INS_BUSY $end
+$var wire 32 % IIN [31:0] $end
+$var wire 32 & DTEMP [31:0] $end
+$var wire 1 ' DATA_RD_VALID $end
+$var wire 1 ( DATA_WR_VALID $end
+$var wire 1 ) FAULT $end
+$var reg 32 * PIPE_IFDCR [31:0] $end
+$var reg 32 + PIPE_INSTR [31:0] $end
+$var reg 32 , PIPE_IMM [31:0] $end
+$var reg 32 - PIPE_EXCIMM [31:0] $end
+$var reg 32 . PIPE_PC [31:0] $end
+$var reg 32 / PIPE_IFPC [31:0] $end
+$var reg 32 0 PIPE_FPC [31:0] $end
+$var wire 32 1 PIPE_RS1 [31:0] $end
+$var wire 32 2 PIPE_RS2 [31:0] $end
+$var reg 1 3 PIPE_BRT $end
+$var wire 1 4 PIPE_BRSTALL $end
+$var reg 32 5 PIPE_ALU_RES [31:0] $end
+$var reg 32 6 PIPE_NEXTPC [31:0] $end
+$var wire 32 7 PIPE_ALU_OP1 [31:0] $end
+$var wire 32 8 PIPE_ALU_OP2 [31:0] $end
+$var wire 33 9 PIPE_SRES_SIGNED [32:0] $end
+$var wire 33 : PIPE_SRES_UNSIGNED [32:0] $end
+$var wire 32 ; PIPE_ALU_WADDR [31:0] $end
+$var wire 32 < DATAMEM_DIN [31:0] $end
+$var wire 1 = DATAMEM_WE $end
+$var wire 1 > DATAMEM_RE $end
+$var wire 32 ? DATAMEM_WRADDR [31:0] $end
+$var wire 32 @ DATAMEM_RDADDR [31:0] $end
+$var wire 32 A DATAMEM_DOUT [31:0] $end
+$var wire 4 B DATAMEM_WB [3:0] $end
+$var wire 1 C DATAMEM_RVCHECK $end
+$var wire 1 D INSMEM_READY $end
+$var wire 32 E INSMEM_ADDR [31:0] $end
+$var reg 32 F PIPE_WBCR [31:0] $end
+$var reg 32 G PIPE_WBRES [31:0] $end
+$var reg 32 H PIPE_WRADDR [31:0] $end
+$var reg 32 I PIPE_WRDATA [31:0] $end
+$var reg 32 J PIPE_RDDATA [31:0] $end
+$var wire 1 K PIPE_WBSTALL $end
+$scope module FETCH $end
+$var wire 1 ! CLK $end
+$var wire 1 " RESET $end
+$var wire 1 # WAIT $end
+$var wire 1 $ INS_BUSY $end
+$var wire 32 % IIN [31:0] $end
+$var reg 1 L FAULT $end
+$upscope $end
+$scope module DECODE $end
+$var wire 1 ! CLK $end
+$var wire 1 " RESET $end
+$var integer 32 M i [31:0] $end
+$upscope $end
+$scope module EXECUTE $end
+$var wire 1 ! CLK $end
+$var wire 1 " RESET $end
+$upscope $end
+$scope module WB $end
+$var wire 1 ! CLK $end
+$var wire 1 " RESET $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1!
+0"
+1#
+1$
+bx %
+bx &
+1'
+1(
+0)
+b0x1 *
+bx +
+bx ,
+b0 -
+b0 .
+b0 /
+b0 0
+b0 1
+b0 2
+03
+04
+bx 5
+b100 6
+b0 7
+b0 8
+b0 9
+b0 :
+b0 ;
+b0 <
+0=
+0>
+b0 ?
+b0 @
+bx A
+b0 B
+1C
+0D
+b0 E
+b0 F
+b0 G
+b0 H
+b0 I
+bx J
+0K
+0L
+bx M
+$end
+#10000
+0!
+#20000
+1!
+b0x1 *
+b0 1
+b0 2
+#30000
+0!
+#40000
+1!
+b0x1 *
+b0 1
+b0 2
+#50000
+0!
+#60000
+1!
+b0x1 *
+b0 1
+b0 2
+#70000
+0!
+#80000
+1!
+b0x1 *
+b0 1
+b0 2
+#90000
+0!
+#100000
+1!
+b0x1 *
+b0 1
+b0 2
+#110000
+0!
+#120000
+1!
+b0x1 *
+b0 1
+b0 2
+#130000
+0!
+#140000
+1!

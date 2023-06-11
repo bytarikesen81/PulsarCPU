@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../pulsarcpu.srcs/sources_1/instructions" \
+"../../../../pulsarcpu.srcs/sources_1/memory/data_memory.v" \
+"../../../../pulsarcpu.srcs/sources_1/layers/decoder/decoder.v" \
+"../../../../pulsarcpu.srcs/sources_1/layers/execute/execute.v" \
+"../../../../pulsarcpu.srcs/sources_1/layers/fetcher/fetcher.v" \
+"../../../../pulsarcpu.srcs/sources_1/memory/ins_memory.v" \
+"../../../../pulsarcpu.srcs/sources_1/pipe/pipe.v" \
+"../../../../pulsarcpu.srcs/sources_1/layers/writeback/writeback.v" \
+"../../../../pulsarcpu.srcs/sources_1/testbench/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="3,689,991 ps"></ZoomStartTime>
+      <ZoomEndTime time="3,690,002 ps"></ZoomEndTime>
+      <Cursor1Time time="3,689,994 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="226"></NameColumnWidth>
+      <ValueColumnWidth column_width="109"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/testbench/next_pc" type="array">
+      <obj_property name="ElementShortName">next_pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">next_pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/count" type="array">
+      <obj_property name="ElementShortName">count[7:0]</obj_property>
+      <obj_property name="ObjectShortName">count[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/stall" type="logic">
+      <obj_property name="ElementShortName">stall</obj_property>
+      <obj_property name="ObjectShortName">stall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/exception" type="logic">
+      <obj_property name="ElementShortName">exception</obj_property>
+      <obj_property name="ObjectShortName">exception</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/inst_mem_read_data" type="array">
+      <obj_property name="ElementShortName">inst_mem_read_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_mem_read_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/inst_mem_is_valid" type="logic">
+      <obj_property name="ElementShortName">inst_mem_is_valid</obj_property>
+      <obj_property name="ObjectShortName">inst_mem_is_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dmem_write_valid" type="logic">
+      <obj_property name="ElementShortName">dmem_write_valid</obj_property>
+      <obj_property name="ObjectShortName">dmem_write_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dmem_read_valid" type="logic">
+      <obj_property name="ElementShortName">dmem_read_valid</obj_property>
+      <obj_property name="ObjectShortName">dmem_read_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dmem_read_data_temp" type="array">
+      <obj_property name="ElementShortName">dmem_read_data_temp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dmem_read_data_temp[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/IMEMSIZE" type="array">
+      <obj_property name="ElementShortName">IMEMSIZE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMEMSIZE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/DMEMSIZE" type="array">
+      <obj_property name="ElementShortName">DMEMSIZE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DMEMSIZE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_ALU_RES" type="array">
+      <obj_property name="ElementShortName">PIPE_ALU_RES[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_ALU_RES[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_NEXTPC" type="array">
+      <obj_property name="ElementShortName">PIPE_NEXTPC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_NEXTPC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_ALU_OP1" type="array">
+      <obj_property name="ElementShortName">PIPE_ALU_OP1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_ALU_OP1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_ALU_OP2" type="array">
+      <obj_property name="ElementShortName">PIPE_ALU_OP2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_ALU_OP2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_SRES_SIGNED" type="array">
+      <obj_property name="ElementShortName">PIPE_SRES_SIGNED[32:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_SRES_SIGNED[32:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_SRES_UNSIGNED" type="array">
+      <obj_property name="ElementShortName">PIPE_SRES_UNSIGNED[32:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_SRES_UNSIGNED[32:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_ALU_WADDR" type="array">
+      <obj_property name="ElementShortName">PIPE_ALU_WADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_ALU_WADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/DATAMEM_DIN" type="array">
+      <obj_property name="ElementShortName">DATAMEM_DIN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATAMEM_DIN[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_WBCR" type="array">
+      <obj_property name="ElementShortName">PIPE_WBCR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_WBCR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_WBRES" type="array">
+      <obj_property name="ElementShortName">PIPE_WBRES[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_WBRES[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_WRADDR" type="array">
+      <obj_property name="ElementShortName">PIPE_WRADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_WRADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_WRDATA" type="array">
+      <obj_property name="ElementShortName">PIPE_WRDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_WRDATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/pipe/PIPE_RDDATA" type="array">
+      <obj_property name="ElementShortName">PIPE_RDDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIPE_RDDATA[31:0]</obj_property>
+   </wvobject>
+</wave_config>
