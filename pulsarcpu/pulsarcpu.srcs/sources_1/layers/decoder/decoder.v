@@ -59,21 +59,22 @@ module decoder(
         //If system is not stall positon, Decode the current instruction
         else if(!pipe.PIPE_IFDCR[0]) 
         begin                      // else take the values from the IF stage and decode it to pass values to corresponding wires
-            pipe.PIPE_EXCIMM            <= pipe.PIPE_IMM;
-            pipe.PIPE_IFDCR[2]          <= (pipe.PIPE_INSTR[`OPCODE] == ALR) || (pipe.PIPE_INSTR[`OPCODE] == ALI);
-            pipe.PIPE_IFDCR[5:3]        <= pipe.PIPE_INSTR[`FUNC3];
-            pipe.PIPE_IFDCR[6]          <= pipe.PIPE_INSTR[`SUBTYPE] && !(pipe.PIPE_INSTR[`OPCODE] == ALI && pipe.PIPE_INSTR[`FUNC3] == ADD);
-            pipe.PIPE_IFDCR[7]          <= (pipe.PIPE_INSTR[`OPCODE] == JMPR  ) || (pipe.PIPE_INSTR[`OPCODE] == LOAD  ) || (pipe.PIPE_INSTR[`OPCODE] == ALI);
-            pipe.PIPE_IFDCR[8]          <= pipe.PIPE_INSTR[`OPCODE] == LUI;
-            pipe.PIPE_IFDCR[9]          <= pipe.PIPE_INSTR[`OPCODE] == JMP;
-            pipe.PIPE_IFDCR[10]         <= pipe.PIPE_INSTR[`OPCODE] == JMPR;
-            pipe.PIPE_IFDCR[11]         <= pipe.PIPE_INSTR[`OPCODE] == BRANCH;
-            pipe.PIPE_IFDCR[12]         <= pipe.PIPE_INSTR[`OPCODE] == STORE;
-            pipe.PIPE_IFDCR[13]         <= pipe.PIPE_INSTR[`OPCODE] == LOAD;
-            pipe.PIPE_IFDCR[18:14]      <= pipe.PIPE_INSTR[`RS1];
-            pipe.PIPE_IFDCR[23:19]      <= pipe.PIPE_INSTR[`RS2];
-            pipe.PIPE_IFDCR[28:24]      <= pipe.PIPE_INSTR[`RD];
-            pipe.PIPE_PC                <= pipe.PIPE_IFPC;
+            pipe.PIPE_EXCIMM            <= pipe.PIPE_IMM; //Initialize Immediate Value
+            pipe.PIPE_IFDCR[2]          <= (pipe.PIPE_INSTR[`OPCODE] == ALR) || (pipe.PIPE_INSTR[`OPCODE] == ALI); //Enable ALU
+            pipe.PIPE_IFDCR[5:3]        <= pipe.PIPE_INSTR[`FUNC3]; //Select ALU Operation Type
+            pipe.PIPE_IFDCR[6]          <= pipe.PIPE_INSTR[`SUBTYPE] && !(pipe.PIPE_INSTR[`OPCODE] == ALI && pipe.PIPE_INSTR[`FUNC3] == ADD); //Alu Arith. Operation SubType(+/-/*//)
+            pipe.PIPE_IFDCR[7]          <= (pipe.PIPE_INSTR[`OPCODE] == JMPR  ) || (pipe.PIPE_INSTR[`OPCODE] == LOAD  ) || (pipe.PIPE_INSTR[`OPCODE] == ALI); //Immediate Selection
+            pipe.PIPE_IFDCR[8]          <= pipe.PIPE_INSTR[`OPCODE] == LUI; //Load Unsigned Integer Flag
+            pipe.PIPE_IFDCR[9]          <= pipe.PIPE_INSTR[`OPCODE] == JMP; //Instruction Mem. Jump Operation Flag
+            pipe.PIPE_IFDCR[10]         <= pipe.PIPE_INSTR[`OPCODE] == JMPR; //Instruction Mem. Jump Operation(via Reg) Flag
+            pipe.PIPE_IFDCR[11]         <= pipe.PIPE_INSTR[`OPCODE] == BRANCH; //Instruction Mem. Branch Operation Flag
+            pipe.PIPE_IFDCR[12]         <= pipe.PIPE_INSTR[`OPCODE] == STORE; //Data Mem. Store(Write) Operation Flag
+            pipe.PIPE_IFDCR[13]         <= pipe.PIPE_INSTR[`OPCODE] == LOAD; //Data Mem. Load(Read) Operation Flag
+            pipe.PIPE_IFDCR[18:14]      <= pipe.PIPE_INSTR[`RS1]; //SRC1 Select
+            pipe.PIPE_IFDCR[23:19]      <= pipe.PIPE_INSTR[`RS2]; //SRC2 Select
+            pipe.PIPE_IFDCR[28:24]      <= pipe.PIPE_INSTR[`RD]; //DEST Select
+            pipe.PIPE_IFDCR[29]         <= ( (pipe.PIPE_INSTR[`OPCODE] == ALR) && (pipe.PIPE_INSTR[`FUNC7] == RV32M) ); 
+            pipe.PIPE_PC                <= pipe.PIPE_IFPC; //Set next instruction for fetching
         end
     end
     
