@@ -35,7 +35,7 @@ module pipe(
     output FAULT
     );
     
-    /*PIPE REGISTERS
+/*PIPE REGISTERS
 PIPE_IFDCR [31:0] :-
 [0] STALL 
 [1] ILLEGAL INSTRUCTION
@@ -52,7 +52,8 @@ PIPE_IFDCR [31:0] :-
 [18:14] SRC1_SELECT
 [23:19] SRC2_SELECT
 [28:24] DEST_SELECT 
-[31:29] RESERVED 
+[29] RV32M INSTRUCTION
+[31:30] RESERVED 
 
 PIPE_IMM [31:0]
 PIPE_INSTR [31:0]
@@ -95,7 +96,7 @@ PIPE_BRCR[1:0] :-
     /*-------Instruction Fetch & Instruction Decode-------*/
     //Pipe IF/D Control Register
     reg [31:0]PIPE_IFDCR;
-    
+
     //Pipe Instruction Register 
     reg [31:0]PIPE_INSTR;
     
@@ -118,6 +119,8 @@ PIPE_BRCR[1:0] :-
     wire PIPE_BRSTALL;
     reg [31:0]PIPE_ALU_RES;
     reg [31:0]PIPE_NEXTPC;
+    
+    reg [63:0]PIPE_ALU_MUL;
     
     wire [31:0]PIPE_ALU_OP1;
     wire [31:0]PIPE_ALU_OP2;
