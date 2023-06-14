@@ -48,4 +48,19 @@ localparam  [ 2: 0] ADD     = 3'b000,    // inst[30] == 0: ADD, inst[31] == 1: S
                     SR      = 3'b101,    // inst[30] == 0: SRL, inst[31] == 1: SRA
                     OR      = 3'b110,
                     AND     = 3'b111;
+                    
+                    
+//---------------------------RV32M-----------------------------//
+//RV32M EXTENSION PACK FUNC7 PREFIX
+localparam[6:0]     RV32M   = 7'b0000001;
+//FUNC3 PATTERNS FOR R-TYPED MULTIPLICATION/DIVISION INSTRUCTIONS
+localparam [2:0]    MUL     = 3'b000,
+                    MULH    = 3'b001,
+                    MULHSU  = 3'b010,
+                    MULHU   = 3'b011,
+                    DIV     = 3'b100,
+                    DIVU    = 3'b101,
+                    REM     = 3'b110,
+                    REMU    = 3'b111;
+//---------------------------------------------------------------//
 
