@@ -29,20 +29,7 @@ module fetcher(
     output reg FAULT);
     
     `include "instruction_set.vh"
-    
-    /*
-    ins_memory insmemory(
-        .CLK(CLK),
-        .ADDR(INS_MEM_AIN),
-        .IOUT(INS_MEM_IOUT),
-        .RE(BUSY)
-    );
-    
-    wire [29:0] INS_MEM_AIN;
-    assign INS_MEM_AIN[29:0] = AIN[31:2];
-    wire [31:0] INS_MEM_IOUT;*/ 
-    
-    
+        
     //INSTRUCTION FETCHING
     always @* begin
         if(pipe.PIPE_IFDCR[0]) pipe.PIPE_INSTR = NOP;
