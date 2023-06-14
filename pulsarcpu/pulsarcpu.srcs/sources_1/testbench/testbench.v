@@ -20,8 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module testbench();
-    //Local Parameters
+module testbench();    //Local Parameters
     localparam      IMEMSIZE = 32768;
     localparam      DMEMSIZE = 32768;
 
